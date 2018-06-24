@@ -1,6 +1,22 @@
 #include <stdio.h>
 #include "exif.h"
 
+namespace
+{
+	FILE* exif_fopen(const char* c, const char* mode)
+	{
+		FILE* f = nullptr;
+#if defined(_WIN32) || defined(_WINDOWS_)
+		errno_t err = fopen_s(&f, c, mode);
+		if (err != 0)
+			f = nullptr; // Erro case.
+#else
+		f = fopen(c, mode);
+#endif
+		return f;
+	}
+}
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     printf("Usage: demo <JPEG file>\n");
@@ -8,7 +24,7 @@ int main(int argc, char *argv[]) {
   }
 
   // Read the JPEG file into a buffer
-  FILE *fp = fopen(argv[1], "rb");
+  FILE *fp = exif_fopen(argv[1], "rb");
   if (!fp) {
     printf("Can't open file.\n");
     return -1;

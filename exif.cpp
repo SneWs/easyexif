@@ -379,7 +379,7 @@ IFEntry parseIFEntry_temp(const unsigned char *buf, const unsigned offs,
   return result;
 }
 
-// helper functions for convinience
+// helper functions for convenience
 template <typename T>
 T parse_value(const unsigned char *buf, bool alignIntel) {
   if (alignIntel) {
@@ -890,7 +890,7 @@ void easyexif::EXIFInfo::clear() {
   ImageWidth = 0;
   ImageHeight = 0;
 
-  // Geolocation
+  // Geo-location
   GeoLocation.Latitude = 0;
   GeoLocation.Longitude = 0;
   GeoLocation.Altitude = 0;
