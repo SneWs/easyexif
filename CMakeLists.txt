@@ -23,17 +23,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Includes
 include_directories(${BASEPATH}/)
+include_directories(${BASEPATH}/easyexif)
+
+# Add the library and demo folders
+add_subdirectory(easyexif)
+add_subdirectory(demo)
 
 
-file(GLOB main_src_files
-    "*.h"
-    "*.cpp"
-)
-
-add_executable(demo 
-	${main_src_files} 
-)
-set_target_properties (demo PROPERTIES
-    FOLDER easyexif-demo  
-)
 
