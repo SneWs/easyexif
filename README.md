@@ -18,6 +18,12 @@ Who uses this library?
   * [Subsurface](http://trac.hohndel.org/browser/subsurface/qt-ui/exif.h?rev=a3d82bf9b1bf7a25e20e75aceeafe80cbc4f78f3).
   * [Loom SDK](https://github.com/LoomSDK/LoomSDK/blob/master/loom/vendor/jheadexif/easyexif.h)
 
+### Using CMake
+As of 2018-06-24 it's possible to build and use this library as part of your CMake env. 
+To build with the fork of SneWs you can just do a ./build [Debug|Release|Empty=Release] and you will get a static lib and the demo binary.
+
+This change has no side effect and the library can be used as before as well, just copy the cpp and h file from the easyexif folder to your project. 
+
 ### Features:
 
   1. Supports common Exif fields including GPS, ISO speed, etc.

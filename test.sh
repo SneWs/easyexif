@@ -1,13 +1,11 @@
 #!/bin/bash
 
-make
+DEMONAME=./Build/bin/demo
 
-DEMONAME=./demo
-
-if [ ! -e ./demo ]; then
+if [ ! -e ./Build/bin/demo ]; then
   # check if demo.exe exists, needed on windows
-  if [ -e ./demo.exe ]; then
-    DEMONAME=./demo.exe
+  if [ -e ./Build/bin/demo.exe ]; then
+    DEMONAME=./Build/bin/demo.exe
   else
     echo Cannot find executable.
     exit 1
